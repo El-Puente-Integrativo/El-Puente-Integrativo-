@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-parchment-50 min-h-screen;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #243b53;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-parchment-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sacred-400 rounded-full;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sacred-700 hover:bg-sacred-800 text-white font-medium py-3 px-6 rounded-xl
+           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 font-sans;
+  }
+
+  .btn-secondary {
+    @apply bg-parchment-200 hover:bg-parchment-300 text-sacred-800 font-medium py-3 px-6 rounded-xl
+           transition-all duration-200 active:scale-95 font-sans border border-parchment-300;
+  }
+
+  .btn-gold {
+    @apply bg-gold-600 hover:bg-gold-700 text-white font-medium py-3 px-6 rounded-xl
+           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 font-sans;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md border border-parchment-200 p-6;
+  }
+
+  .step-indicator {
+    @apply w-10 h-10 rounded-full flex items-center justify-center font-serif font-bold text-sm;
+  }
+
+  .sacred-text {
+    @apply font-serif text-sacred-900 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #486581 0%, #b45309 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-sacred-gradient {
+    background: linear-gradient(135deg, #102a43 0%, #334e68 50%, #243b53 100%);
+  }
+
+  .bg-parchment-gradient {
+    background: linear-gradient(180deg, #fdfaf4 0%, #faf3e0 50%, #f5e6c0 100%);
+  }
+
+  .candle-glow {
+    box-shadow: 0 0 30px rgba(217, 119, 6, 0.2), 0 0 60px rgba(217, 119, 6, 0.1);
+  }
+}
